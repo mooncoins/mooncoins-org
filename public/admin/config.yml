@@ -1,0 +1,64 @@
+backend:
+  name: github
+  repo: opensites/template.opensites.io
+  branch: main
+  base_url: https://us-central1-sonorous-shore-313203.cloudfunctions.net # The base URL for your Firebase Function
+  auth_endpoint: /oauth/auth # The path to the OAuth endpoint of the function
+publish_mode: editorial_workflow
+media_folder: public/img
+public_folder: img
+collections:
+  - name: "general"
+    label: "General"
+    files:
+      - label: "Metadata"
+        name: "metadata"
+        file: "content/metadata.md"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "homePage"
+        file: "content/root.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - label: "Link Categories"
+            name: "categories"
+            widget: list
+            fields:
+              - {
+                  label: "Section Title (not displayed, reference only)",
+                  name: "title",
+                  widget: "string",
+                }
+              - {
+                  label: "Anchor ID for Section Scroll",
+                  name: "anchorId",
+                  widget: "string",
+                }
+              - {
+                  label: "Section Header (displayed)",
+                  name: "header",
+                  widget: "string",
+                }
+              - label: "Links in Section"
+                name: "linksList"
+                widget: list
+                fields:
+                  - {
+                      label: "Link Text to Display",
+                      name: "name",
+                      widget: "string",
+                    }
+                  - { label: "Associated URL", name: "url", widget: "string" }
+          - label: Call To Action
+            name: callToAction
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Button Text, name: button, widget: text }
