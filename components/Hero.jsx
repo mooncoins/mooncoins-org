@@ -1,5 +1,4 @@
 import Grid from "@mui/material/Grid";
-import Image from "next/image";
 import Typography from "@mui/material/Typography";
 import ArrowDownward from "@mui/icons-material/ArrowDownward";
 import { ParticlesHero } from "./ParticlesHero";
@@ -24,7 +23,13 @@ const Hero = ({ imgSrc, imgAlt, imgOpacity, title, subtitle, particles }) => {
         {particles ? (
           <ParticlesHero />
         ) : (
-          <Image src={imgSrc} alt={imgAlt} layout="fill" objectFit="cover" />
+          <img
+            src={imgSrc}
+            alt={imgAlt}
+            height="100%"
+            width="100%"
+            style={{ objectFit: "cover" }}
+          />
         )}
         <Grid
           container

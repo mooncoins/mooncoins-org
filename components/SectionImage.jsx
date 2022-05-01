@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import Image from "next/image";
 
 export const SectionImage = ({ src, alt, opacity }) => {
   return (
@@ -14,11 +13,12 @@ export const SectionImage = ({ src, alt, opacity }) => {
         zIndex: -100,
       }}
     >
-      <Image
+      <img
         src={src || "/img/fusion-food.jpg"}
         alt={alt || "Your image here"}
-        layout="fill"
-        objectFit="cover"
+        width="100%"
+        height="100%"
+        style={{ objectFit: "cover" }}
       />
       <Box
         sx={{

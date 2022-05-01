@@ -1,7 +1,9 @@
-const debug = process.env.NODE_ENV !== "production";
+const withPlugins = require("next-compose-plugins");
+const optimizedImages = require("next-optimized-images");
+
 // see github pages template and netlify template for webpack
-// use https://github.com/cyrilwanner/next-optimized-images when ready, for now us akamai and path at root for image loading
-module.exports = {
+const debug = process.env.NODE_ENV !== "production";
+const nextConfig = {
   reactStrictMode: true,
   webpack: (cfg) => {
     cfg.module.rules.push({
@@ -12,5 +14,23 @@ module.exports = {
     return cfg;
   },
   assetPrefix: !debug ? "/notes/" : "",
-  images: { loader: "akamai", path: "/" },
+  images: { disableStaticImages: true },
 };
+
+// see https://github.com/cyrilwanner/next-optimized-images for image optimization config
+// see https://www.npmjs.com/package/next-compose-plugins for withPlugins syntax
+module.exports = withPlugins(
+  [
+    [
+      optimizedImages,
+      {
+        /* config for next-optimized-images, 
+        see https://github.com/cyrilwanner/next-optimized-images#configuration */
+        optimizeImagesInDev: true,
+      },
+    ],
+
+    // future other plugins here
+  ],
+  nextConfig
+);
