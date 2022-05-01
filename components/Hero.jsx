@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import ArrowDownward from "@mui/icons-material/ArrowDownward";
 import { ParticlesHero } from "./ParticlesHero";
 import { useTheme } from "@mui/material/styles";
+import volcano from "/img/big-volcano.jpg";
 
 const Hero = ({ imgSrc, imgAlt, imgOpacity, title, subtitle, particles }) => {
   const theme = useTheme();
@@ -24,7 +25,7 @@ const Hero = ({ imgSrc, imgAlt, imgOpacity, title, subtitle, particles }) => {
           <ParticlesHero />
         ) : (
           <img
-            src={imgSrc}
+            src={volcano}
             alt={imgAlt}
             height="100%"
             width="100%"
