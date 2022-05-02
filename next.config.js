@@ -13,7 +13,6 @@ const nextConfig = {
     });
     return cfg;
   },
-  assetPrefix: !debug ? "/notes/" : "",
   images: { disableStaticImages: true },
 };
 
@@ -27,6 +26,7 @@ module.exports = withPlugins(
         /* config for next-optimized-images, 
         see https://github.com/cyrilwanner/next-optimized-images#configuration */
         optimizeImagesInDev: true,
+        imagesFolder: "img",
       },
     ],
 
