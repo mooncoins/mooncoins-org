@@ -27,6 +27,7 @@ module.exports = withPlugins(
         see https://github.com/cyrilwanner/next-optimized-images#configuration */
         optimizeImagesInDev: true,
         imagesFolder: "img",
+        mozjpeg: { maxMemory: 1024 },
       },
     ],
 
