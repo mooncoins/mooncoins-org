@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import MuiNextLink from "./MuiNextLink";
 
 export const NavigationCard = ({
-  imgSrc,
+  imgFileName,
   imgAlt,
   title,
   description,
@@ -16,7 +16,11 @@ export const NavigationCard = ({
 }) => {
   return (
     <Card sx={{ maxWidth: 480 }}>
-      <CardMedia sx={{ height: 270 }} image={imgSrc} title={imgAlt} />
+      <CardMedia
+        sx={{ height: 270 }}
+        image={require(`/public/img/${imgFileName || "moon-launch.svg"}`)}
+        title={imgAlt}
+      />
       <CardContent>
         <Typography component="h3" variant="h5" gutterBottom>
           {title}

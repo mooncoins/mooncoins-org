@@ -2,7 +2,7 @@
 title: Home Page
 hero:
   # particles: true
-  imgSrc: /img/big-volcano.jpg
+  imgFileName: big-volcano.jpg
   imgAlt: Beautiful Volcano
   imgOpacity: .3
   title: Adrenaline Flights
@@ -43,10 +43,10 @@ callToAction:
     text: View Options
     link: https://google.com
   image:
-    src: /img/outer-space.svg
+    fileName: outer-space.svg
     alt: Outer Space!
 imageBreak:
-  src: /img/hawaii-beauty.jpg
+  fileName: hawaii-beauty.jpg
   alt: Hawaiian Mountains
   opacity: .2
 review:
@@ -62,13 +62,13 @@ review:
       rating: 5
       quote: Candy!!!!!!!
 navigation:
-  - imgSrc: /img/lava-flow.jpg
+  - imgFileName: lava-flow.jpg
     imgAlt: Lava Flow
     title: Volcano Tours
     description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, minus.
     buttonLink: /volcano
     buttonText: Experience Now
-  - imgSrc: /img/everest-sunrise.jpg
+  - imgFileName: everest-sunrise.jpg
     imgAlt: Everest Sunrise
     title: Everest Specials
     description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, minus.

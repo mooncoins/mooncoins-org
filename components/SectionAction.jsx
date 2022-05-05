@@ -9,13 +9,13 @@ export const SectionAction = ({ title, description, button, image }) => {
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <img
-            src={image?.src || "/img/moon-launch.svg"}
+            src={require(`/public/img/${image?.fileName || "moon-launch.svg"}`)}
             alt={image?.alt || "Your image here"}
             layout="responsive"
             width="100%"
             height="auto"
           />
-          {!image?.src && (
+          {!image?.fileName && (
             <Typography
               component="h2"
               variant="h4"

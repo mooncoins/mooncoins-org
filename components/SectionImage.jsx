@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 
-export const SectionImage = ({ src, alt, opacity }) => {
+export const SectionImage = ({ fileName, alt, opacity }) => {
   return (
     <Box
       component="section"
@@ -14,7 +14,7 @@ export const SectionImage = ({ src, alt, opacity }) => {
       }}
     >
       <img
-        src={src || "/img/fusion-food.jpg"}
+        src={require(`/public/img/${fileName || "hawaii-beauty.jpg"}`)}
         alt={alt || "Your image here"}
         width="100%"
         height="100%"
