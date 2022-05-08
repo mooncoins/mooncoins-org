@@ -13,7 +13,7 @@ import Fab from "@mui/material/Fab";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
 import BackToTop from "./BackToTop";
 
-import { attributes as headerData } from "../content/header.md";
+import { attributes as headerData } from "@content/header.md";
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 const navLinks = headerData.navLinks ? headerData.navLinks : [];

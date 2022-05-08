@@ -4,7 +4,7 @@ import Hero from "@components/Hero";
 import { SectionAction } from "@components/SectionAction";
 import { SectionImage } from "@components/SectionImage";
 import { SectionReview } from "@components/SectionReview";
-import { attributes as pageContent } from "../content/homepage.md";
+import { attributes as pageContent } from "@content/homepage.md";
 import Grid from "@mui/material/Grid";
 import { NavigationCard } from "@components/NavigationCard";
 

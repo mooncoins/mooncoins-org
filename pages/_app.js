@@ -2,13 +2,13 @@ import Head from "next/head";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider } from "@emotion/react";
-import createEmotionCache from "../styles/createEmotionCache";
+import createEmotionCache from "@styles/createEmotionCache";
 
-import "/styles/globals.css";
+import "@styles/globals.css";
 import { Header } from "@components/Header";
 import { Footer } from "@components/Footer";
 import { attributes as metadata } from "@content/metadata.md";
-import { themeFactory } from "../styles/themeUtils";
+import { themeFactory } from "@styles/themeUtils";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
