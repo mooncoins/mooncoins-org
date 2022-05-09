@@ -1,7 +1,10 @@
 {
   "packageComments": "imagemin-mozjpeg, imagemin-optipng, imagemin-svgo, need upgraded when next-optimized-images can support",
-  "name": "template.opensites.io",
+  "name": "general-template.opensites.io",
+  "version": "0.0.1",
   "private": true,
+  "author":"Opensites Digital, LLC",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

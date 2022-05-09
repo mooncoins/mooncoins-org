@@ -6,6 +6,8 @@
       "@content/*": ["content/*"],
       "@styles/*": ["src/styles/*"],
       "@util/*": ["src/util/*"],
+      "@scss/*": ["src/scss/*"],
+      "@sections/*": ["src/sections/*"],
     }
   }
 }
