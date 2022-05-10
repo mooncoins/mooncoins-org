@@ -4,6 +4,7 @@ backend:
   branch: main
   base_url: https://us-central1-sonorous-shore-313203.cloudfunctions.net # The base URL for your Firebase Function
   auth_endpoint: /oauth/auth # The path to the OAuth endpoint of the function
+site_url: https://general-template.opensites.io
 publish_mode: editorial_workflow
 media_folder: public/img
 public_folder: img
