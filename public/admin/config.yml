@@ -9,13 +9,37 @@ media_folder: public/img
 public_folder: img
 collections:
   - name: "general"
-    label: "General"
+    label: "General Site Information"
     files:
-      - label: "Metadata"
+      - label: "Site Information"
         name: "metadata"
         file: "content/metadata.md"
         fields:
           - { label: "Site Title", name: "title", widget: "string" }
+          - label: Site Color Theme
+            name: theme
+            widget: object
+            fields:
+              - label: Light/Dark Mode
+                name: mode
+                widget: select
+                options:
+                  - light
+                  - dark
+              - label: Color Palette
+                name: palette
+                widget: object
+                fields:
+                  - label: Primary Color
+                    name: primary
+                    widget: color
+                    allowInput: true
+                    enableAlpha: true
+                  - label: Secondary Color
+                    name: secondary
+                    widget: color
+                    allowInput: true
+                    enableAlpha: true
   - name: "pages"
     label: "Pages"
     files:
