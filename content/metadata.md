@@ -1,5 +1,5 @@
 ---
-title: Opensites Digital Template
+title: Opensites Digital General Template
 theme:
   mode: dark
   palette:
