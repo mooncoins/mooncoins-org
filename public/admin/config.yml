@@ -17,6 +17,9 @@ collections:
         file: "content/metadata.md"
         fields:
           - { label: "Site Title", name: "title", widget: "string" }
+          - label: "Favicon (small image in top browser tab)"
+            name: "favicon"
+            widget: "image"
           - label: Site Color Theme
             name: theme
             widget: object

@@ -33,7 +33,7 @@ export default function MyApp(props) {
         {/* PWA primary color */}
         <meta name="theme-color" content={theme.palette.primary.main} />
 
-        <link rel="shortcut icon" href="/img/favicon.png" />
+        <link rel="shortcut icon" href={`/img/${metadata.favicon}`} />
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
