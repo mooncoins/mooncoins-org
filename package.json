@@ -10,7 +10,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "toggle:dev": "echo 'const environment = \"dev\";' > ./out/admin/environment.js",
+    "toggle:github-only": "echo 'const environment = \"github-only\";' > ./out/admin/environment.js",
+    "toggle:prod": "echo 'const environment = \"prod\";' > ./out/admin/environment.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",

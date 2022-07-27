@@ -31,6 +31,9 @@ jobs:
       - name: Build and Export static files
         run: npm run export
 
+      - name: Toggle prod profile for deployment
+        run: npm run toggle:prod
+
       # - name: Get yarn cache
       #   id: yarn-cache
       #   run: echo "::set-output name=dir::$(yarn cache dir)"

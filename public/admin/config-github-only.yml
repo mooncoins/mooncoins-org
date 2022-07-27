@@ -2,7 +2,7 @@ backend:
   name: github
   repo: opensites/general-template
   branch: main
-  base_url: https://us-central1-sonorous-shore-313203.cloudfunctions.net # The base URL for your Firebase Function
+  base_url: https://us-central1-sonorous-shore-313203.cloudfunctions.net # The base URL for our custom github oauth firebase function
   auth_endpoint: /oauth/auth # The path to the OAuth endpoint of the function
 site_url: https://general-template.opensites.io
 publish_mode: editorial_workflow
