@@ -3,7 +3,7 @@ backend:
   repo: opensites/general-template
   branch: main
   api_root: https://api.opensites.io/v1/gitproxy/github # gitProxy firebase function
-  base_url: https:/login.opensites.io # opensites-login-page
+  base_url: https://login.opensites.io # opensites-login-page
   auth_endpoint: / #login page is a react app, uses firebase oauth so endpoint is just the root
 site_url: https://general-template.opensites.io
 publish_mode: editorial_workflow
