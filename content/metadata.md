@@ -1,5 +1,5 @@
 ---
-title: Opensite Digital General Template
+title: Opensites Digital General Template
 favicon: favicon.png
 theme:
   mode: dark
