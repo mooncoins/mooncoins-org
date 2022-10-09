@@ -14,9 +14,14 @@ import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
 import BackToTop from "./BackToTop";
 
 import { attributes as headerData } from "@content/header.md";
+import configObject from "../../appConfig";
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 const navLinks = headerData.navLinks ? headerData.navLinks : [];
+navLinks.push({
+  title: "Login",
+  path: `${configObject.basePath}/admin/index.html`,
+});
 
 export const Header = () => {
   return (

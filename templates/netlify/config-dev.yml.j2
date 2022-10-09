@@ -1,0 +1,93 @@
+backend:
+  name: github
+  repo: {{  netlifyConfig.repo }}
+  branch: main
+  api_root: http://localhost:5001/sonorous-shore-313203/us-central1/gitProxy/v1/gitproxy/github #gitProxy firebase function
+  base_url: http://localhost:3004 #opensites-login-page
+  auth_endpoint: / #login page is a react app, uses firebase oauth so endpoint is just the root
+site_url: https://localhost:3000 #local url
+publish_mode: editorial_workflow
+media_folder: public/img
+public_folder: img
+collections:
+  - name: "general"
+    label: "General Site Information"
+    files:
+      - label: "Site Information"
+        name: "metadata"
+        file: "content/metadata.md"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - label: "Favicon (small image in top browser tab)"
+            name: "favicon"
+            widget: "image"
+          - label: Site Color Theme
+            name: theme
+            widget: object
+            fields:
+              - label: Light/Dark Mode
+                name: mode
+                widget: select
+                options:
+                  - light
+                  - dark
+              - label: Color Palette
+                name: palette
+                widget: object
+                fields:
+                  - label: Primary Color
+                    name: primary
+                    widget: color
+                    allowInput: true
+                    enableAlpha: true
+                  - label: Secondary Color
+                    name: secondary
+                    widget: color
+                    allowInput: true
+                    enableAlpha: true
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "homePage"
+        file: "content/root.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - label: "Link Categories"
+            name: "categories"
+            widget: list
+            fields:
+              - {
+                  label: "Section Title (not displayed, reference only)",
+                  name: "title",
+                  widget: "string",
+                }
+              - {
+                  label: "Anchor ID for Section Scroll",
+                  name: "anchorId",
+                  widget: "string",
+                }
+              - {
+                  label: "Section Header (displayed)",
+                  name: "header",
+                  widget: "string",
+                }
+              - label: "Links in Section"
+                name: "linksList"
+                widget: list
+                fields:
+                  - {
+                      label: "Link Text to Display",
+                      name: "name",
+                      widget: "string",
+                    }
+                  - { label: "Associated URL", name: "url", widget: "string" }
+          - label: Call To Action
+            name: callToAction
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Button Text, name: button, widget: text }

@@ -1,9 +1,11 @@
 const withPlugins = require("next-compose-plugins");
 const optimizedImages = require("next-optimized-images");
+const configObject = require("./appConfig");
 
 // see github pages template and netlify template for webpack
 const debug = process.env.NODE_ENV !== "production";
 const nextConfig = {
+  basePath: configObject.basePath,
   reactStrictMode: true,
   webpack: (cfg) => {
     cfg.module.rules.push({

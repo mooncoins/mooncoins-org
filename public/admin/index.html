@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
     <link id="config-link" href="/" type="text/yaml" rel="cms-config-url" />
-    <script src="/admin/environment.js"></script>
+    <script src="environment.js"></script>
     <script>
       let link = document.getElementById("config-link");
-      link.href = `/admin/config-${environment}.yml`;
+      link.href = `config-${environment}.yml`;
     </script>
   </head>
   <body>

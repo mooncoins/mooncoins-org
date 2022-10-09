@@ -1,0 +1,105 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: github pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  template-and-deploy:
+    if: github.run_number == 1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Apply nextjs app templating
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: templates/nextjs/appConfig.js.j2
+          output_file: appConfig.js
+          data_file: templates/config.json
+          data_format: json
+
+      - name: Apply config-dev.yml app templating
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: templates/netlify/config-dev.yml.j2
+          output_file: public/admin/config-dev.yml
+          data_file: templates/config.json
+          data_format: json
+
+      - name: Apply config-github-only.yml app templating
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: templates/netlify/config-github-only.yml.j2
+          output_file: public/admin/config-github-only.yml
+          data_file: templates/config.json
+          data_format: json
+
+      - name: Apply config-prod.yml app templating
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: templates/netlify/config-prod.yml.j2
+          output_file: public/admin/config-prod.yml
+          data_file: templates/config.json
+          data_format: json
+
+      # - name: Delete templates folder
+      #   run: |
+      #     rm -rf templates
+
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: commit
+        run: |
+          git add .
+          git commit -m "Applied templates and removed templates folder"
+          git push origin main
+
+      #################################### deploy ###################################
+      - name: Setup Node & caching
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12.x"
+          cache: "npm"
+
+      - run: npm install -g npm
+
+      - run: hash -r
+
+      - run: npm -v
+
+      - name: Install node modules
+        run: npm install
+
+      - name: Build and Export static files
+        run: npm run export
+
+      - name: Toggle prod profile for deployment
+        run: npm run toggle:prod
+
+      # - name: Get yarn cache
+      #   id: yarn-cache
+      #   run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      # - name: Cache dependencies
+      #   uses: actions/cache@v1
+      #   with:
+      #     path: ${{ steps.yarn-cache.outputs.dir }}
+      #     key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-yarn-
+      # - run: yarn install
+      # - run: yarn build
+      # - run: yarn export
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out

@@ -1,0 +1,7 @@
+{
+  "basePath": "",
+  "netlifyConfig": {
+    "repo": "opensites/general-template",
+    "site_url": "https://general-template.opensites.io"
+  }
+}
