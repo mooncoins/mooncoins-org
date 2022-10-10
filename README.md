@@ -2,7 +2,9 @@
 
 1. Make sure to not change the naming convention for the public images folder, it has to be hardcoded as `/public/img/` for the prefix to make webpack work, see issue comment here: https://github.com/cyrilwanner/next-optimized-images/issues/141#issuecomment-623556804
 
-2. If you want to add query parameters for `next-optimized-images`, you need to use `require.context`. See issue here: https://github.com/cyrilwanner/next-optimized-images/issues/16 
+2. If you want to add query parameters for `next-optimized-images`, you need to use `require.context`. See issue here: https://github.com/cyrilwanner/next-optimized-images/issues/16
+
+3. The `parking page` branch displays while the site is being built. Ensure that any templates have this branch or they will not deploy correctly.
 
 ## Getting Started
 
