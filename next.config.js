@@ -2,6 +2,9 @@ const withPlugins = require("next-compose-plugins");
 const optimizedImages = require("next-optimized-images");
 const configObject = require("./appConfig");
 
+// save for next optimized images and non-root path
+const imagesFolder = "img";
+
 // see github pages template and netlify template for webpack
 const debug = process.env.NODE_ENV !== "production";
 const nextConfig = {
@@ -28,7 +31,7 @@ module.exports = withPlugins(
         /* config for next-optimized-images, 
         see https://github.com/cyrilwanner/next-optimized-images#configuration */
         optimizeImagesInDev: true,
-        imagesFolder: "img",
+        imagesFolder,
         imagesPublicPath: `${configObject.basePath}/_next/static/${imagesFolder}/`,
         mozjpeg: {},
       },
