@@ -20,7 +20,7 @@ const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 const navLinks = headerData.navLinks ? headerData.navLinks : [];
 navLinks.push({
   title: "Login",
-  path: `${configObject.basePath}/admin/index.html`,
+  path: `/admin/index.html`,
 });
 
 export const Header = () => {
