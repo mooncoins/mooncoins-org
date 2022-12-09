@@ -49,11 +49,37 @@ collections:
     label: "Pages"
     files:
       - label: "Home Page"
-        name: "homePage"
-        file: "content/root.md"
+        name: "homepage"
+        file: "content/homepage.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Date", name: "date", widget: "datetime" }
+          - label: "hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Turn on Particles"
+                name: "particles"
+                widget: "boolean"
+                default: false
+              - label: "Hero Image"
+                name: "imgFileName"
+                widget: "image"
+              - label: "Hero Alternate Text"
+                name: "imgAlt"
+                widget: "string"
+              - label: "Hero Image Opacity"
+                name: "imgOpacity"
+                widget: "number"
+                value_type: "float"
+                min: 0
+                max: 1
+                step: .1
+              - label: "Hero Main Text"
+                name: "title"
+                widget: "string"
+              - label: "Hero Subtext"
+                name: "subtitle"
+                widget: "string"
           - { label: "Body", name: "body", widget: "markdown" }
           - label: "Link Categories"
             name: "categories"

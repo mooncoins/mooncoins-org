@@ -1,7 +1,7 @@
 ---
 title: Home Page
 hero:
-  # particles: true
+  particles: false
   imgFileName: big-volcano.jpg
   imgAlt: Beautiful Volcano
   imgOpacity: .3
