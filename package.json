@@ -3,7 +3,7 @@
   "name": "general-template.opensites.io",
   "version": "0.0.1",
   "private": true,
-  "author":"Opensites Digital, LLC",
+  "author": "Opensites Digital, LLC",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",

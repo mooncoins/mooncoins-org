@@ -74,5 +74,4 @@ navigation:
     description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, minus.
     buttonLink: /everest
     buttonText: Experience Now
-footer:
 ---
