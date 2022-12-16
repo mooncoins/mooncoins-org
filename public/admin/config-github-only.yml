@@ -10,7 +10,7 @@ media_folder: public/img
 public_folder: img
 collections:
   - name: "general"
-    label: "General Site Information"
+    label: "General Site Information and Header/Footer Info"
     files:
       - label: "Site Information"
         name: "metadata"
@@ -44,6 +44,46 @@ collections:
                     widget: color
                     allowInput: true
                     enableAlpha: true
+      - label: Header
+        name: header
+        file: content/header.md
+        fields:
+          - label: Navigation Menu Links
+            name: navLinks
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: text
+              - label: Link Path
+                name: path
+                widget: text
+            - label: Header
+      - label: Footer
+        name: footer
+        file: content/footer.md
+        fields:
+          - label: Social Media Links
+            name: socialMedia
+            widget: list
+            fields:
+              - label: Type of Social Media (e.g., Facebook)
+                name: type
+                widget: text
+              - label: Link Path
+                name: link
+                widget: text
+          - label: Copyright Info (for site content)
+            name: copyright
+            widget: list
+            fields:
+              - label: year
+                name: year
+                type: number
+                min: 0
+              - label: Entity Owning Copyright
+                name: entity
+                widget: text
   - name: "pages"
     label: "Pages"
     files:
