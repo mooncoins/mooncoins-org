@@ -48,7 +48,7 @@ collections:
         name: header
         file: content/header.md
         fields:
-          - label: Navigation Menu Links
+          - label: "Navigation Menu Links"
             name: navLinks
             widget: list
             fields:
@@ -58,7 +58,6 @@ collections:
               - label: Link Path
                 name: path
                 widget: text
-            - label: Header
       - label: Footer
         name: footer
         file: content/footer.md
@@ -206,3 +205,10 @@ collections:
               - label: Button Link
                 name: buttonLink
                 widget: text
+  - label: "Informational Pages"
+    name: "infoPages"
+    folder: "content/info"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
