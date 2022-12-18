@@ -1,5 +1,4 @@
 ---
 title: Hawaii
 ---
-
-# Perfect weather
+# <p style="text-align: center;">Perfect weather</p>
