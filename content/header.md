@@ -4,11 +4,11 @@ navLinks:
   - title: home
     path: /
   - title: Volcanoes
-    path: /volcano
+    path: /info/volcano
   - title: Everest
-    path: /everest
+    path: /info/everest
   - title: Hawaii
-    path: /hawaii
+    path: /info/hawaii
   - title: contact
-    path: /contact
+    path: /info/contact
 ---

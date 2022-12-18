@@ -11,7 +11,7 @@ media_folder: public/img
 public_folder: img
 collections:
   - name: "general"
-    label: "General Site Information"
+    label: "General Site Information and Header/Footer Info"
     files:
       - label: "Site Information"
         name: "metadata"
@@ -45,49 +45,172 @@ collections:
                     widget: color
                     allowInput: true
                     enableAlpha: true
+      - label: Header
+        name: header
+        file: content/header.md
+        fields:
+          - label: Navigation Menu Links
+            name: navLinks
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: text
+              - label: Link Path
+                name: path
+                widget: text
+            - label: Header
+      - label: Footer
+        name: footer
+        file: content/footer.md
+        fields:
+          - label: Social Media Links
+            name: socialMedia
+            widget: list
+            fields:
+              - label: Type of Social Media (e.g., Facebook)
+                name: type
+                widget: text
+              - label: Link Path
+                name: link
+                widget: text
+          - label: Copyright Info (for site content)
+            name: copyright
+            widget: list
+            fields:
+              - label: year
+                name: year
+                type: number
+                min: 0
+              - label: Entity Owning Copyright
+                name: entity
+                widget: text
   - name: "pages"
     label: "Pages"
     files:
       - label: "Home Page"
-        name: "homePage"
-        file: "content/root.md"
+        name: "homepage"
+        file: "content/homepage.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Date", name: "date", widget: "datetime" }
-          - { label: "Body", name: "body", widget: "markdown" }
-          - label: "Link Categories"
-            name: "categories"
+          - label: "hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Turn on Particles"
+                name: "particles"
+                widget: "boolean"
+                default: false
+              - label: "Hero Image"
+                name: "imgFileName"
+                widget: "image"
+              - label: "Hero Alternate Text"
+                name: "imgAlt"
+                widget: "string"
+              - label: "Hero Image Opacity"
+                name: "imgOpacity"
+                widget: "number"
+                value_type: "float"
+                min: 0
+                max: 1
+                step: .1
+              - label: "Hero Main Text"
+                name: "title"
+                widget: "string"
+              - label: "Hero Subtext"
+                name: "subtitle"
+                widget: "string"
+          - label: "Page Sections"
+            name: "sections"
             widget: list
             fields:
-              - {
-                  label: "Section Title (not displayed, reference only)",
-                  name: "title",
-                  widget: "string",
-                }
-              - {
-                  label: "Anchor ID for Section Scroll",
-                  name: "anchorId",
-                  widget: "string",
-                }
-              - {
-                  label: "Section Header (displayed)",
-                  name: "header",
-                  widget: "string",
-                }
-              - label: "Links in Section"
-                name: "linksList"
-                widget: list
-                fields:
-                  - {
-                      label: "Link Text to Display",
-                      name: "name",
-                      widget: "string",
-                    }
-                  - { label: "Associated URL", name: "url", widget: "string" }
+              - label: Section Header
+                name: header
+                widget: text
+              - label: Section Text
+                name: text
+                widget: markdown
           - label: Call To Action
             name: callToAction
             widget: object
             fields:
               - { label: Title, name: title, widget: string }
               - { label: Description, name: description, widget: text }
-              - { label: Button Text, name: button, widget: text }
+              - label: Button
+                name: button
+                widget: object
+                fields:
+                  - { label: Text, name: text, widget: text }
+                  - { label: Link, name: link, widget: text }
+              - label: Image
+                name: image
+                widget: object
+                fields:
+                  - { label: Choose Image, name: fileName, widget: image }
+                  - { label: Alt Text, name: alt, widget: text }
+          - label: Image Separator
+            name: imageBreak
+            widget: object
+            fields:
+              - { label: Choose Image, name: fileName, widget: image }
+              - { label: Alt Text, name: alt, widget: text }
+              - label: Opacity
+                name: opacity
+                widget: number
+                value_type: float
+                min: 0
+                max: 1
+                step: .1
+          - label: Reviews
+            name: review
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: text
+              - label: Reviews
+                name: reviews
+                widget: list
+                fields:
+                  - label: Name of Reviewer
+                    name: name
+                    widget: text
+                  - label: Number of Stars (1-5)
+                    name: rating
+                    widget: number
+                    value_type: float
+                    min: 0
+                    max: 5
+                    step: .5
+                  - label: Customer quote or review text content
+                    name: quote
+                    widget: text
+          - label: Navigation Cards
+            name: navigation
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: text
+              - label: Description
+                name: description
+                widget: text
+              - label: Choose Image
+                name: imgFileName
+                widget: image
+              - label: Alt Text
+                name: imgAlt
+                widget: text
+              - label: Button Text
+                name: buttonText
+                widget: text
+              - label: Button Link
+                name: buttonLink
+                widget: text
+  - label: "Informational Pages"
+    name: "infoPages"
+    folder: "pages/info"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
