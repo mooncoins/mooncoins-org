@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { PageNotFound } from "@components/PageNotFound";
 
 const InfoPage = () => {
   const router = useRouter();
@@ -8,9 +9,18 @@ const InfoPage = () => {
   // so need to have a failsafe initialization while pageName is undefined.
   // next will inject router.query after page hydration
   // see bottom of here for details: https://nextjs.org/docs/routing/dynamic-routes
-  const { attributes: pageData, react: PageContent } = pageName
-    ? require(`/content/info/${pageName}.md`)
-    : {};
+  let contentImport = {};
+
+  if (pageName) {
+    // handle the case where someone visits /info, gets routed here appropriately, but the
+    // page doesn't exist
+    try {
+      contentImport = require(`/content/info/${pageName}.md`);
+    } catch (err) {
+      contentImport = { attributes: {}, react: PageNotFound };
+    }
+  }
+  const { attributes: pageData, react: PageContent } = contentImport;
 
   return <>{pageName && <PageContent />}</>;
 };

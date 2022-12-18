@@ -1,4 +1,4 @@
-const PageNotFound = () => {
+export const PageNotFound = () => {
   return (
     <div
       style={{
@@ -10,5 +10,3 @@ const PageNotFound = () => {
     </div>
   );
 };
-
-export default PageNotFound;
