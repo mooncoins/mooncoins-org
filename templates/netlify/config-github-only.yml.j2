@@ -7,7 +7,7 @@ backend:
 site_url: {{  netlifyConfig.site_url }}
 publish_mode: editorial_workflow
 media_folder: /public/img
-public_folder: /img
+public_folder: {{  basePath  }}/img
 collections:
   - name: "general"
     label: "General Site Information and Header/Footer"
@@ -48,7 +48,9 @@ collections:
         name: header
         file: content/header.md
         fields:
-          - label: "Navigation Menu Links"
+          - label: >
+              Navigation Menu Links (if linking to another collection, use the appropriate prefix, e.g.,
+              /info for Informational Pages)
             name: navLinks
             widget: list
             fields:

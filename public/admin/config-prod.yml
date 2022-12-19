@@ -49,7 +49,9 @@ collections:
         name: header
         file: content/header.md
         fields:
-          - label: "Navigation Menu Links"
+          - label: >
+              Navigation Menu Links (if linking to another collection, use the appropriate prefix, e.g.,
+              /info for Informational Pages)
             name: navLinks
             widget: list
             fields:
