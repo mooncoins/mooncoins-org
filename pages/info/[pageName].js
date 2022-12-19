@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { PageNotFound } from "@components/PageNotFound";
 
 // read here to understand dynamic routes: https://nextjs.org/learn/basics/dynamic-routes/dynamic-routes-details
