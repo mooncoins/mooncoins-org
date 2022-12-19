@@ -7,8 +7,8 @@ backend:
   auth_endpoint: / #login page is a react app, uses firebase oauth so endpoint is just the root
 site_url: https://localhost:3000 #local url
 publish_mode: editorial_workflow
-media_folder: public/img
-public_folder: img
+media_folder: /public/img
+public_folder: /img
 collections:
   - name: "general"
     label: "General Site Information and Header/Footer"
