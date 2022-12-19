@@ -9,6 +9,8 @@ navLinks:
     path: /info/everest
   - title: Hawaii
     path: /info/hawaii
-  - title: contact
+  - title: Space
+    path: /info/space
+  - title: Contact
     path: /info/contact
 ---

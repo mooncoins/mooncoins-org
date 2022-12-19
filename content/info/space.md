@@ -1,6 +1,5 @@
 ---
 title: space
 ---
-![spacey](/img/outer-space.svg "Spaceship")
 
-L﻿et's see what happens here...
+Click on your media folder and add the picture of the spaceship here to see what happens!
