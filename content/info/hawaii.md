@@ -7,7 +7,7 @@ title: Hawaii
 
 </p>
 
-<﻿div style={{margin: "auto"}}>
+<﻿div style={{margin: 'auto'}}>
 
 ```
 <p style={{textAlign: 'center'}}>
