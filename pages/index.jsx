@@ -9,14 +9,14 @@ import Grid from "@mui/material/Grid";
 import { NavigationCard } from "@components/NavigationCard";
 
 const Homepage = () => {
-  const { hero, sections, callToAction, imageBreak, review, navigation } =
+  const { hero, sections, callToAction, imageBreaks, review, navigation } =
     pageContent || {};
 
   return (
     <>
       <Hero {...hero} />
       <SectionAction {...callToAction} />
-      <SectionImage {...imageBreak} />
+      <SectionImage {...imageBreaks[0]} />
       <Container maxWidth="sm">
         {sections &&
           sections.map((section, index) => (
@@ -27,7 +27,7 @@ const Homepage = () => {
           ))}
       </Container>
       <SectionReview {...review} />
-      <SectionImage {...imageBreak} />
+      <SectionImage {...imageBreaks[1]} />
       {navigation && Array.isArray(navigation) && (
         <Container maxWidth="md" sx={{ my: 15 }}>
           <Grid container spacing={2}>

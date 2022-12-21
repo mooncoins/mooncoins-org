@@ -44,10 +44,13 @@ callToAction:
   image:
     fileName: outer-space.svg
     alt: Outer Space!
-imageBreak:
-  fileName: hawaii-beauty.jpg
-  alt: Hawaiian Mountains
-  opacity: 0.2
+imageBreaks:
+  - fileName: hawaii-beauty.jpg
+    alt: Hawaiian Mountains
+    opacity: 0.2
+  - fileName: lava-flow.jpg
+    alt: Lava Flow
+    opacity: 0.2
 review:
   title: Customer Quotes
   reviews:
