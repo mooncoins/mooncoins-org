@@ -1,6 +1,4 @@
 ---
 title: space
 ---
-![](/img/lava-flow.jpg)
-
-Click on your media folder and add the picture of the spaceship here to see what happens!
+# Click on the "+" icon above to select an image from your media folder and add it here!
