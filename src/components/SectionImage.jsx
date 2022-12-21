@@ -1,6 +1,11 @@
 import { Box } from "@mui/material";
 
+import { stripPathPrefixes } from "@util/image";
+
 export const SectionImage = ({ fileName, alt, opacity }) => {
+  // clean here for use later
+  const cleanedImgFileName = stripPathPrefixes(fileName || "hawaii-beauty.jpg");
+
   return (
     <Box
       component="section"
@@ -14,7 +19,7 @@ export const SectionImage = ({ fileName, alt, opacity }) => {
       }}
     >
       <img
-        src={require(`/public/img/${fileName || "hawaii-beauty.jpg"}`)}
+        src={require(`/public/img/${cleanedImgFileName}`)}
         alt={alt || "Your image here"}
         width="100%"
         height="100%"

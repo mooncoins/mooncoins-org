@@ -2,7 +2,9 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import ArrowDownward from "@mui/icons-material/ArrowDownward";
 import { ParticlesHero } from "./ParticlesHero";
+import { stripPathPrefixes } from "@util/image";
 import { useTheme } from "@mui/material/styles";
+import { badgeUnstyledClasses } from "@mui/base";
 
 const Hero = ({
   imgFileName,
@@ -13,6 +15,11 @@ const Hero = ({
   particles,
 }) => {
   const theme = useTheme();
+
+  // clean here for use later
+  const cleanedImgFileName = stripPathPrefixes(
+    imgFileName || "hawaii-beauty.jpg"
+  );
 
   return (
     <>
@@ -32,7 +39,7 @@ const Hero = ({
           <ParticlesHero />
         ) : (
           <img
-            src={require(`/public/img/${imgFileName}`)}
+            src={require(`/public/img/${cleanedImgFileName}`)}
             alt={imgAlt}
             height="100%"
             width="100%"

@@ -6,6 +6,8 @@ import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import MuiNextLink from "./MuiNextLink";
 
+import { stripPathPrefixes } from "@util/image";
+
 export const NavigationCard = ({
   imgFileName,
   imgAlt,
@@ -14,11 +16,16 @@ export const NavigationCard = ({
   buttonLink,
   buttonText,
 }) => {
+  // clean here for use later
+  const cleanedImgFileName = stripPathPrefixes(
+    imgFileName || "moon-launch.svg"
+  );
+
   return (
     <Card sx={{ maxWidth: 480 }}>
       <CardMedia
         sx={{ height: 270 }}
-        image={require(`/public/img/${imgFileName || "moon-launch.svg"}`)}
+        image={require(`/public/img/${cleanedImgFileName}`)}
         title={imgAlt}
       />
       <CardContent>

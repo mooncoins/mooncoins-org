@@ -4,7 +4,10 @@
 
 2. If you want to add query parameters for `next-optimized-images`, you need to use `require.context`. See issue here: https://github.com/cyrilwanner/next-optimized-images/issues/16
 
-3. The `parking page` branch displays while the site is being built. Ensure that any templates have this branch or they will not deploy correctly.
+3. Image path prefixes in the frontmatter are ignored. This is too allow ease of use via either direct commits or through the netlify image widget (which automatically adds the prefix, which has to be /basePath/img). Thus, `/basePath/img/image.svg`,`/img/image.svg`,`/anything/image.svg`, and `image.svg` all ultimately get processed into
+   the same folder (i.e., the public images folder in `/public/img`).
+
+4. The `parking page` branch displays while the site is being built. Ensure that any templates have this branch or they will not deploy correctly.
 
 ## Getting Started
 

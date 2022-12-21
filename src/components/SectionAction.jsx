@@ -3,13 +3,20 @@ import Typography from "@mui/material/Typography";
 import MuiNextLink from "@components/MuiNextLink";
 import Button from "@mui/material/Button";
 
+import { stripPathPrefixes } from "@util/image";
+
 export const SectionAction = ({ title, description, button, image }) => {
+  // clean here for use later
+  const cleanedImgFileName = stripPathPrefixes(
+    image?.fileName || "moon-launch.svg"
+  );
+
   return (
     <Container component="section" maxWidth="md" sx={{ mb: 15 }}>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <img
-            src={require(`/public/img/${image?.fileName || "moon-launch.svg"}`)}
+            src={require(`/public/img/${cleanedImgFileName}`)}
             alt={image?.alt || "Your image here"}
             layout="responsive"
             width="100%"
