@@ -149,8 +149,8 @@ collections:
                   - { label: Choose Image, name: fileName, widget: image }
                   - { label: Alt Text, name: alt, widget: text }
           - label: Image Separator
-            name: imageBreak
-            widget: object
+            name: imageBreaks
+            widget: list
             fields:
               - { label: Choose Image, name: fileName, widget: image }
               - { label: Alt Text, name: alt, widget: text }
