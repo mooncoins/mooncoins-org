@@ -2,7 +2,7 @@
 title: Home Page
 hero:
   particles: false
-  imgFileName: /img/everest-sunrise.jpg
+  imgFileName: /img/big-volcano.jpg
   imgAlt: Beautiful Volcano
   imgOpacity: 0.3
   title: Adrenaline Flights
