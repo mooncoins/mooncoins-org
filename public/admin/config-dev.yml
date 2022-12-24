@@ -18,6 +18,12 @@ collections:
         file: "content/metadata.md"
         fields:
           - { label: "Site Title", name: "title", widget: "string" }
+          - label: Description to display when linked externally
+            name: linkDescription
+            widget: text
+          - label: Image to display when linked externally
+            name: linkImage
+            widget: image
           - label: "Favicon (small image in top browser tab)"
             name: "favicon"
             widget: "image"
