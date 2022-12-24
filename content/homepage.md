@@ -64,16 +64,19 @@ review:
       rating: 5
       quote: Candy!!!!!!!
 navigation:
-  - imgFileName: lava-flow.jpg
-    imgAlt: Lava Flow
-    title: Volcano Tours
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, minus.
-    buttonLink: /volcano
-    buttonText: Experience Now
-  - imgFileName: everest-sunrise.jpg
-    imgAlt: Everest Sunrise
-    title: Everest Specials
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, minus.
-    buttonLink: /everest
-    buttonText: Experience Now
+  title: Services
+  description: Browse our flight service offerings to find the best fit for you.
+  pathways:
+    - imgFileName: lava-flow.jpg
+      imgAlt: Lava Flow
+      title: Volcano Tours
+      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, minus.
+      buttonLink: /volcano
+      buttonText: Experience Now
+    - imgFileName: everest-sunrise.jpg
+      imgAlt: Everest Sunrise
+      title: Everest Specials
+      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, minus.
+      buttonLink: /everest
+      buttonText: Experience Now
 ---

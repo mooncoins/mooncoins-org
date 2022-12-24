@@ -4,9 +4,8 @@ import Hero from "@components/Hero";
 import { SectionAction } from "@components/SectionAction";
 import { SectionImage } from "@components/SectionImage";
 import { SectionReview } from "@components/SectionReview";
+import { SectionNavigation } from "@components/SectionNavigation";
 import { attributes as pageContent } from "@content/homepage.md";
-import Grid from "@mui/material/Grid";
-import { NavigationCard } from "@components/NavigationCard";
 
 const Homepage = () => {
   const { hero, sections, callToAction, imageBreaks, review, navigation } =
@@ -28,24 +27,7 @@ const Homepage = () => {
       </Container>
       <SectionReview {...review} />
       <SectionImage {...imageBreaks[1]} />
-      {navigation && Array.isArray(navigation) && (
-        <Container maxWidth="md" sx={{ my: 15 }}>
-          <Grid container spacing={2}>
-            {navigation.map((navItem, index) => (
-              <Grid
-                key={`${index}-${navItem.title}`}
-                container
-                item
-                justifyContent="center"
-                xs={12}
-                md={6}
-              >
-                <NavigationCard {...navItem} />
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      )}
+      <SectionNavigation {...navigation} />
     </>
   );
 };

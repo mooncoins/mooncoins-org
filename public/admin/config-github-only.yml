@@ -187,30 +187,44 @@ collections:
                     widget: text
           - label: Navigation Cards
             name: navigation
-            widget: list
+            widget: object
             fields:
               - label: Title
                 name: title
-                widget: text
+                widget: string
               - label: Description
                 name: description
                 widget: text
-              - label: Choose Image
-                name: imgFileName
-                widget: image
-              - label: Alt Text
-                name: imgAlt
-                widget: text
-              - label: Button Text
-                name: buttonText
-                widget: text
-              - label: Button Link
-                name: buttonLink
-                widget: text
+              - label: Navigation Pathways
+                name: pathways
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: text
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Choose Image
+                    name: imgFileName
+                    widget: image
+                  - label: Alt Text
+                    name: imgAlt
+                    widget: text
+                  - label: Button Text
+                    name: buttonText
+                    widget: text
+                  - label: Button Link
+                    name: buttonLink
+                    widget: text
   - label: "Informational Pages"
     name: "infoPages"
     folder: "content/info"
     create: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Title (don't change once created or page might disappear)",
+          name: "title",
+          widget: "string",
+        }
       - { label: "Body", name: "body", widget: "markdown" }
