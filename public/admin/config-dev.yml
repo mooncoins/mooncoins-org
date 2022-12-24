@@ -43,14 +43,50 @@ collections:
                 fields:
                   - label: Primary Color
                     name: primary
-                    widget: color
-                    allowInput: true
-                    enableAlpha: true
+                    widget: select
+                    options:
+                      - red
+                      - pink
+                      - purple
+                      - deepPurple
+                      - indigo
+                      - blue
+                      - lightBlue
+                      - cyan
+                      - teal
+                      - green
+                      - lightGreen
+                      - lime
+                      - yellow
+                      - amber
+                      - orange
+                      - deepOrange
+                      - brown
+                      - grey
+                      - blueGrey
                   - label: Secondary Color
                     name: secondary
-                    widget: color
-                    allowInput: true
-                    enableAlpha: true
+                    widget: select
+                    options:
+                      - red
+                      - pink
+                      - purple
+                      - deepPurple
+                      - indigo
+                      - blue
+                      - lightBlue
+                      - cyan
+                      - teal
+                      - green
+                      - lightGreen
+                      - lime
+                      - yellow
+                      - amber
+                      - orange
+                      - deepOrange
+                      - brown
+                      - grey
+                      - blueGrey
       - label: Header
         name: header
         file: content/header.md
