@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import { PageNotFound } from "@components/PageNotFound";
 
 // read here to understand dynamic routes: https://nextjs.org/learn/basics/dynamic-routes/dynamic-routes-details
@@ -58,7 +59,18 @@ const InfoPage = ({ pageName }) => {
   }
   const { attributes: pageData, react: PageContent } = contentImport;
 
-  return <>{pageName && <PageContent />}</>;
+  return (
+    <>
+      {pageName && (
+        <Container
+          maxWidth="md"
+          sx={{ overflow: "hidden", overflowWrap: "break-word" }}
+        >
+          <PageContent />
+        </Container>
+      )}
+    </>
+  );
 };
 
 export default InfoPage;
