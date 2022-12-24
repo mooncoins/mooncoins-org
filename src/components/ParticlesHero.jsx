@@ -11,7 +11,10 @@ const particleStyle = {
 const options = (theme) => ({
   fullScreen: false,
   background: {
-    color: theme.palette.primary.dark || "#0d47a1",
+    color:
+      theme.palette.mode === "light" // designed to be opposite of the Hero title color
+        ? theme.palette.primary.light || "#0d47a1"
+        : theme.palette.secondary.dark || "#0d47a1",
   },
   interactivity: {
     events: {
