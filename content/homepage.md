@@ -70,13 +70,15 @@ navigation:
     - imgFileName: lava-flow.jpg
       imgAlt: Lava Flow
       title: Volcano Tours
-      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, minus.
-      buttonLink: /volcano
+      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Similique, minus.
+      buttonLink: /info/volcano
       buttonText: Experience Now
     - imgFileName: everest-sunrise.jpg
       imgAlt: Everest Sunrise
       title: Everest Specials
-      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, minus.
-      buttonLink: /everest
+      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Similique, minus.
+      buttonLink: /info/everest
       buttonText: Experience Now
 ---
