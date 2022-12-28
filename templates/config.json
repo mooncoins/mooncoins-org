@@ -1,7 +1,1 @@
-{
-  "basePath": "",
-  "netlifyConfig": {
-    "repo": "opensites/general-template",
-    "site_url": "https://general-template.opensites.io"
-  }
-}
+{"basePath":"","netlifyConfig":{"repo":"opensites/mooncoins-org","site_url":"https://osdl.io/mooncoins-org"}}
