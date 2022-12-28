@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: opensites/general-template
+  repo: opensites/mooncoins-org
   branch: main
   api_root: http://localhost:5001/sonorous-shore-313203/us-central1/gitProxy/v1/gitproxy/github #gitProxy firebase function
   base_url: http://localhost:3004 #opensites-login-page
