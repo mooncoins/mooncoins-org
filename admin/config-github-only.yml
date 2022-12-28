@@ -1,0 +1,272 @@
+backend:
+  name: github
+  repo: opensites/mooncoins-org
+  branch: main
+  base_url: https://us-central1-sonorous-shore-313203.cloudfunctions.net # The base URL for our custom github oauth firebase function
+  auth_endpoint: /oauth/auth # The path to the OAuth endpoint of the function
+site_url: https://osdl.io/mooncoins-org
+publish_mode: editorial_workflow
+media_folder: /public/img
+public_folder: /img
+collections:
+  - name: "general"
+    label: "General Site Information and Header/Footer"
+    files:
+      - label: "Site Information"
+        name: "metadata"
+        file: "content/metadata.md"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - label: Description to display when linked externally
+            name: linkDescription
+            widget: text
+          - label: Image to display when linked externally
+            name: linkImage
+            widget: image
+          - label: "Favicon (small image in top browser tab)"
+            name: "favicon"
+            widget: "image"
+          - label: Site Color Theme
+            name: theme
+            widget: object
+            fields:
+              - label: Light/Dark Mode
+                name: mode
+                widget: select
+                options:
+                  - light
+                  - dark
+              - label: Color Palette
+                name: palette
+                widget: object
+                fields:
+                  - label: Primary Color
+                    name: primary
+                    widget: select
+                    options:
+                      - red
+                      - pink
+                      - purple
+                      - deepPurple
+                      - indigo
+                      - blue
+                      - lightBlue
+                      - cyan
+                      - teal
+                      - green
+                      - lightGreen
+                      - lime
+                      - yellow
+                      - amber
+                      - orange
+                      - deepOrange
+                      - brown
+                      - grey
+                      - blueGrey
+                  - label: Secondary Color
+                    name: secondary
+                    widget: select
+                    options:
+                      - red
+                      - pink
+                      - purple
+                      - deepPurple
+                      - indigo
+                      - blue
+                      - lightBlue
+                      - cyan
+                      - teal
+                      - green
+                      - lightGreen
+                      - lime
+                      - yellow
+                      - amber
+                      - orange
+                      - deepOrange
+                      - brown
+                      - grey
+                      - blueGrey
+      - label: Header
+        name: header
+        file: content/header.md
+        fields:
+          - label: >
+              Navigation Menu Links (if linking to another collection, use the appropriate prefix, e.g.,
+              /info for Informational Pages)
+            name: navLinks
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: text
+              - label: Link Path
+                name: path
+                widget: text
+      - label: Footer
+        name: footer
+        file: content/footer.md
+        fields:
+          - label: Social Media Links
+            name: socialMedia
+            widget: list
+            fields:
+              - label: Type of Social Media (e.g., Facebook)
+                name: type
+                widget: text
+              - label: Link Path
+                name: link
+                widget: text
+          - label: Copyright Info (for site content)
+            name: copyright
+            widget: list
+            fields:
+              - label: year
+                name: year
+                type: number
+                min: 0
+              - label: Entity Owning Copyright
+                name: entity
+                widget: text
+  - name: "standardPages"
+    label: "Standard Pages"
+    files:
+      - label: "Home Page"
+        name: "homepage"
+        file: "content/homepage.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - label: "hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Turn on Particles"
+                name: "particles"
+                widget: "boolean"
+                default: false
+              - label: "Hero Image"
+                name: "imgFileName"
+                widget: "image"
+              - label: "Hero Alternate Text"
+                name: "imgAlt"
+                widget: "string"
+              - label: "Hero Image Opacity"
+                name: "imgOpacity"
+                widget: "number"
+                value_type: "float"
+                min: 0
+                max: 1
+                step: .1
+              - label: "Hero Main Text"
+                name: "title"
+                widget: "string"
+              - label: "Hero Subtext"
+                name: "subtitle"
+                widget: "string"
+          - label: "Page Sections"
+            name: "sections"
+            widget: list
+            fields:
+              - label: Section Header
+                name: header
+                widget: text
+              - label: Section Text
+                name: text
+                widget: markdown
+          - label: Call To Action
+            name: callToAction
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Button
+                name: button
+                widget: object
+                fields:
+                  - { label: Text, name: text, widget: text }
+                  - { label: Link, name: link, widget: text }
+              - label: Image
+                name: image
+                widget: object
+                fields:
+                  - { label: Choose Image, name: fileName, widget: image }
+                  - { label: Alt Text, name: alt, widget: text }
+          - label: Image Separator
+            name: imageBreaks
+            widget: list
+            fields:
+              - { label: Choose Image, name: fileName, widget: image }
+              - { label: Alt Text, name: alt, widget: text }
+              - label: Opacity
+                name: opacity
+                widget: number
+                value_type: float
+                min: 0
+                max: 1
+                step: .1
+          - label: Reviews
+            name: review
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: text
+              - label: Reviews
+                name: reviews
+                widget: list
+                fields:
+                  - label: Name of Reviewer
+                    name: name
+                    widget: text
+                  - label: Number of Stars (1-5)
+                    name: rating
+                    widget: number
+                    value_type: float
+                    min: 0
+                    max: 5
+                    step: .5
+                  - label: Customer quote or review text content
+                    name: quote
+                    widget: text
+          - label: Navigation Cards
+            name: navigation
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+              - label: Navigation Pathways
+                name: pathways
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: text
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Choose Image
+                    name: imgFileName
+                    widget: image
+                  - label: Alt Text
+                    name: imgAlt
+                    widget: text
+                  - label: Button Text
+                    name: buttonText
+                    widget: text
+                  - label: Button Link
+                    name: buttonLink
+                    widget: text
+  - label: "Informational Pages"
+    name: "infoPages"
+    folder: "content/info"
+    create: true
+    fields:
+      - {
+          label: "Title (don't change once created or page might disappear)",
+          name: "title",
+          widget: "string",
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
